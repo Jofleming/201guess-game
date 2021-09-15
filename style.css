@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    background-color: rgb(199, 199, 199);
+}
+section, header {
+    border: thin solid black;
+    padding: 15px;
+}
+header {
+    background-color: rgb(51, 0, 51);
+    color: rgba(255, 217, 0, 0.774);
+}
+footer {
+    background-color: rgb(51, 0, 51);
+    color: rgba(255, 217, 0, 0.744);
+    padding: 15px;
+}
