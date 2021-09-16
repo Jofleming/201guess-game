@@ -97,7 +97,9 @@ console.log(multiChoiceGame);
 
 let multiAnswer = ['husky', 'australian shepherd', 'aussie', 'mini australian sheperd', 'siberian husky'];
 let numberOfAttempts = 6;
+let correct = false;
 
+while(numberOfAttempts > 0)
 if (multiGame == 'yes'){
     let user_multianswer = prompt('What color is my dog?').toLowerCase();
     for (let i = 0; i < numberOfAttempts; i++){
@@ -105,7 +107,8 @@ if (multiGame == 'yes'){
             console.log("your answer" , answer)
              if (user_multianswer.toLowerCase() == multiAnswer[i].toLowerCase()) {
              alert('You got it right!');
-             correctCount ++;
+             correctCount++;
+             correct = true;
              break;
             } else { 
             alert('Incorrect, You have ' + (numberOfAttempts - i) + ' attempts left');
