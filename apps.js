@@ -48,3 +48,66 @@ function welcomeName(){
 function thanksName(){
     document.write('Thank you again ' + userName + ' for taking an interest in learning a bit more about me. I hope you have a wonderful day.')
 }
+
+// Lab 3 Questions
+
+let guessCount = 0
+let correctAnswer = 30;
+let wannaPlay = prompt('Do you want to play a guessing game about me? (Yes or No)');
+let playGame = wannaPlay.toLowerCase() == 'yes';
+console.log(wannaPlay);
+let wonGame = false;
+
+if (playGame){
+    let numberOfAttempts = 4;
+    for (let i = 1; i <= numberOfAttempts; i++){
+        let userAnswer = prompt("How old am I?");
+        console.log(i)
+        if (userAnswer == correctAnswer){ 
+            wonTheGame = true;
+            alert ('You got it right!');
+            guessCount += 1;
+            break;
+        }
+        else {
+            if(userAnswer < correctAnswer){
+                alert(`You think I look that young? Rude.. Try Again! You have  ${numberOfAttempts -i}  attempts left`);
+            } else if (userAnswer > correctAnswer){
+                alert(`Are you saying I look old? I am younger than that. Try Again! You have ${numberOfAttempts -i}  attempts left`);
+            }
+        }
+    } 
+}
+if (wonTheGame){
+    alert(`Thank you ${userName} for playing this guessing game. You won!`);
+}
+else {
+    alert ('I was born in April of 1991. Thank you for playing.');
+    alert(`Thank you ${userName} for playing this guessing game.`);
+}
+
+let multiChoiceGame = prompt('Do you want to play a multi-choice guessing game about me? (Yes or No)');
+let multiGame = multiChoiceGame.toLowerCase() == 'yes';
+console.log(multiChoiceGame);
+
+
+if (multiGame){
+    let answer = prompt('What color is my dog?').toLowerCase();
+    let correctAnswer = ['husky', 'australian shepherd', 'aussie', 'mini australian sheperd', 'siberian husky'];
+    let numberOfAttempts = 6 ;
+    for(let i = 1; i <= numberOfAttempts; i++){
+            console.log("correct answer" , correctAnswer)
+            console.log("your answer" , answer)
+             if(correctAnswer[0] == answer || 
+                correctAnswer[1] == answer){
+             alert('You got it right!');
+             guessCount += 1;
+                break;
+            } else { 
+            alert('Incorrect, You have ' + (numberOfAttempts - i) + ' attempts left');
+            }
+            answer = prompt('What color is my dog?').toLowerCase();
+        }
+}
+
+alert(`Hey ${userName} You got ${guessCount} out of 7 correct`);
