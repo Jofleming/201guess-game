@@ -1,5 +1,8 @@
 'use strict';
 
+function main(){
+
+
 let correctCount = 0
 let userName = prompt('What is your name/what you would like to be called?')
 alert('Welcome ' + userName + '! Thank you for taking an interest in learning a bit more about me.')
@@ -118,3 +121,6 @@ if (multiGame == 'yes'){
 }
 
 alert('Hey ' + userName + '. You got ' + correctCount + ' out of 7 correct.');
+
+}
+main();
