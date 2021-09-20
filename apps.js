@@ -1,10 +1,19 @@
 'use strict';
 
+let userName = prompt('What is your name/what you would like to be called?')
+
+function welcomeName(){
+    document.write('Welcome ' + userName + '! Thank you for taking the time to learn more about me.')
+}
+
+function thanksName(){
+    document.write('Thank you again ' + userName + ' for taking an interest in learning a bit more about me. I hope you have a wonderful day.')
+}
+
 function main(){
 
 
 let correctCount = 0
-let userName = prompt('What is your name/what you would like to be called?')
 alert('Welcome ' + userName + '! Thank you for taking an interest in learning a bit more about me.')
 
 let huskyName = prompt('Question 1: Does my Husky like to cuddle? Yes or No');
@@ -50,13 +59,6 @@ if (myDegree.toLowerCase() == 'no' || myDegree.toLowerCase() == 'n') {
 }
 alert(`Thank you ` + userName + ` for participating.`)
 
-function welcomeName(){
-    document.write('Welcome ' + userName + '! Thank you for taking the time to learn more about me.')
-}
-
-function thanksName(){
-    document.write('Thank you again ' + userName + ' for taking an interest in learning a bit more about me. I hope you have a wonderful day.')
-}
 
 // Lab 3 Questions
 
@@ -100,23 +102,21 @@ console.log(multiChoiceGame);
 
 let multiAnswer = ['husky', 'australian shepherd', 'aussie', 'mini australian sheperd', 'siberian husky'];
 let numberOfAttempts = 6;
-let correct = false;
+let correct = true;
 
-while(numberOfAttempts > 0)
+while(numberOfAttempts > 0 && correct)
 if (multiGame == 'yes'){
-    let user_multianswer = prompt('What color is my dog?').toLowerCase();
+    let user_multianswer = prompt('Name a breed of dog I have.');
     for (let i = 0; i < numberOfAttempts; i++){
-            console.log("correct answer" , multiAnswer)
-            console.log("your answer" , answer)
-             if (user_multianswer.toLowerCase() == multiAnswer[i].toLowerCase()) {
-             alert('You got it right!');
-             correctCount++;
-             correct = true;
-             break;
+            if (user_multianswer.toLowerCase() == multiAnswer[i]) {
+                alert('You got it right!');
+                correctCount++;
+                correct = false;
+                break;
             } else { 
-            alert('Incorrect, You have ' + (numberOfAttempts - i) + ' attempts left');
+                alert('Incorrect, You have ' + (numberOfAttempts - i) + ' attempts left');
+                user_multianswer = prompt('Name a breed of dog I have.').toLowerCase();
             }
-            answer = prompt('What color is my dog?').toLowerCase();
         }
 }
 
